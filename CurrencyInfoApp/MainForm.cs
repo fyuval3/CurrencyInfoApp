@@ -16,10 +16,7 @@ namespace CurrencyInfoApp
         {
             InitializeComponent();
 
-            m_CurrencyConrols = new CurrencyControl[]
-            {
-                currencyControl1, currencyControl2, currencyControl3, currencyControl4,
-            };
+            m_CurrencyConrols = m_MainLayoutPanel.Controls.OfType<CurrencyControl>().ToArray();
 
             r_SQLConnection = new SQLiteConnection("Data Source=Currencies.db;Version=3;");
             r_SQLConnection.Open();
