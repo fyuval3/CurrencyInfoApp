@@ -14,7 +14,6 @@ namespace CurrencyInfoApp
 
         public MainForm()
         {
-
             InitializeComponent();
 
             m_CurrencyConrols = new CurrencyControl[]

@@ -18,7 +18,7 @@
 	</ItemGroup>
 
 	<PropertyGroup>
-		<CodeAnalysisRuleSet>CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRuleSet>CodeAnalysisRuleset.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 
 	<ItemGroup>
