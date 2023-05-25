@@ -5,9 +5,8 @@ namespace CurrencyFetching
 {
     public static class CurrencyFetcher
     {
-        private const string k_ApiMainUrl = "https://xecdapi.xe.com/v1"; // API provided by XE Currency
-        private const string k_ApiUserId = "yuvalfrenkel362342689";
-        private const string k_ApiUserKey = "tmvl8346g0p6o7lri14i4eiu47";
+        private const string k_ApiMainUrl = "https://api.currencybeacon.com/v1"; // API provided by CurrencyBeacon
+        private const string k_ApiKey = "9ffec33ed333e09e548678769aa14179";
 
         public static string GetCurrency(eCurrency i_From, eCurrency i_To)
         {
@@ -18,18 +17,8 @@ namespace CurrencyFetching
 
                 using (HttpClient client = new HttpClient())
                 {
-                    var authenticationString = $"{k_ApiUserId}:{k_ApiUserKey}";
-                    var base64EncodedAuthenticationString = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(authenticationString));
-
-                    Uri uri = new Uri(string.Format("{0}/convert_from?from={1}&to={2}", k_ApiMainUrl, fromString, toString));
-
-                    var requestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
-                    requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Basic", base64EncodedAuthenticationString);
-
-                    client.DefaultRequestHeaders.Add("Accept", "application/json");
-                    client.DefaultRequestHeaders.Add(k_ApiUserId, k_ApiUserKey);
-
-                    response = client.SendAsync(requestMessage).Result;
+                    Uri uri = new Uri($"{k_ApiMainUrl}/latest?base={fromString}&symbols={toString}&api_key={k_ApiKey}");
+                    response = client.GetAsync(uri).Result;
                 }
 
                 response.EnsureSuccessStatusCode();
@@ -37,7 +26,7 @@ namespace CurrencyFetching
                 string jsonString = response.Content.ReadAsStringAsync().Result;
                 CurrencyResponse currencyResponse = JsonConvert.DeserializeObject<CurrencyResponse>(jsonString);
 
-                string currency = currencyResponse.CurrenciesList[0]["mid"];
+                string currency = currencyResponse.InnerResponse.Rates[toString];
 
                 return currency;
             }

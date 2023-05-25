@@ -54,7 +54,8 @@
             // 
             m_RateText.AutoSize = true;
             m_RateText.Font = new Font("Calibri", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            m_RateText.Location = new Point(121, 0);
+            m_RateText.Location = new Point(118, 0);
+            m_RateText.Margin = new Padding(0, 0, 3, 0);
             m_RateText.Name = "m_RateText";
             m_RateText.Size = new Size(83, 27);
             m_RateText.TabIndex = 4;
@@ -75,7 +76,7 @@
             m_CopyButton.BackColor = SystemColors.ActiveCaption;
             m_CopyButton.BackgroundImage = (Image)resources.GetObject("m_CopyButton.BackgroundImage");
             m_CopyButton.BackgroundImageLayout = ImageLayout.Stretch;
-            m_CopyButton.Location = new Point(208, 0);
+            m_CopyButton.Location = new Point(205, 0);
             m_CopyButton.Margin = new Padding(1, 0, 3, 0);
             m_CopyButton.Name = "m_CopyButton";
             m_CopyButton.Size = new Size(27, 27);
@@ -93,7 +94,7 @@
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Margin = new Padding(0, 0, 3, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(238, 27);
+            flowLayoutPanel1.Size = new Size(235, 27);
             flowLayoutPanel1.TabIndex = 7;
             // 
             // flowLayoutPanel2
@@ -106,7 +107,7 @@
             flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel2.Location = new Point(0, 0);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(241, 42);
+            flowLayoutPanel2.Size = new Size(238, 42);
             flowLayoutPanel2.TabIndex = 8;
             // 
             // CurrencyControl
@@ -118,7 +119,7 @@
             Controls.Add(flowLayoutPanel2);
             Margin = new Padding(8);
             Name = "CurrencyControl";
-            Size = new Size(241, 42);
+            Size = new Size(238, 42);
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);

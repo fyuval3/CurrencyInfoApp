@@ -63,9 +63,9 @@ namespace CurrencyInfoApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scene6 {
+        internal static System.Drawing.Bitmap CopyIcon {
             get {
-                object obj = ResourceManager.GetObject("scene6", resourceCulture);
+                object obj = ResourceManager.GetObject("CopyIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
