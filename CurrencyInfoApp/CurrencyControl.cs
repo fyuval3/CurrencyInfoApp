@@ -1,4 +1,6 @@
 ﻿using CurrencyFetching;
+using System.Diagnostics;
+using System.Drawing.Text;
 
 namespace CurrencyInfoApp
 {
@@ -72,6 +74,23 @@ namespace CurrencyInfoApp
         public CurrencyControl()
         {
             InitializeComponent();
+            setCustomCurrenciesFont();
+        }
+
+        private void setCustomCurrenciesFont()
+        {
+            try
+            {
+                PrivateFontCollection collection = new PrivateFontCollection();
+                collection.AddFontFile(@"Mermaid1001.ttf");
+                FontFamily fontFamily = new FontFamily("Mermaid", collection);
+                Font font = new Font(fontFamily, m_CurrenciesText.Font.Size);
+
+                m_CurrenciesText.Font = font;
+            }
+            catch
+            {
+            }
         }
 
         private void updateCurrenciesText()

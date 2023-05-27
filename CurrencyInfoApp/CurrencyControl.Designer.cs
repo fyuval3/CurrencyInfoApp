@@ -42,7 +42,9 @@
             // m_CurrenciesText
             // 
             m_CurrenciesText.AutoSize = true;
+            m_CurrenciesText.BackColor = Color.Transparent;
             m_CurrenciesText.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            m_CurrenciesText.ForeColor = Color.FromArgb(244, 238, 224);
             m_CurrenciesText.Location = new Point(0, 0);
             m_CurrenciesText.Margin = new Padding(0, 0, 3, 0);
             m_CurrenciesText.Name = "m_CurrenciesText";
@@ -53,7 +55,9 @@
             // m_RateText
             // 
             m_RateText.AutoSize = true;
+            m_RateText.BackColor = Color.Transparent;
             m_RateText.Font = new Font("Calibri", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            m_RateText.ForeColor = Color.FromArgb(244, 238, 224);
             m_RateText.Location = new Point(118, 0);
             m_RateText.Margin = new Padding(0, 0, 3, 0);
             m_RateText.Name = "m_RateText";
@@ -64,7 +68,9 @@
             // m_LastUpdateText
             // 
             m_LastUpdateText.AutoSize = true;
+            m_LastUpdateText.BackColor = Color.Transparent;
             m_LastUpdateText.Font = new Font("Calibri", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            m_LastUpdateText.ForeColor = Color.FromArgb(244, 238, 224);
             m_LastUpdateText.Location = new Point(3, 27);
             m_LastUpdateText.Name = "m_LastUpdateText";
             m_LastUpdateText.Size = new Size(73, 15);
@@ -73,7 +79,7 @@
             // 
             // m_CopyButton
             // 
-            m_CopyButton.BackColor = SystemColors.ActiveCaption;
+            m_CopyButton.BackColor = Color.FromArgb(244, 238, 224);
             m_CopyButton.BackgroundImage = (Image)resources.GetObject("m_CopyButton.BackgroundImage");
             m_CopyButton.BackgroundImageLayout = ImageLayout.Stretch;
             m_CopyButton.Location = new Point(205, 0);
